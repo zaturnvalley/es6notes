@@ -28,8 +28,26 @@ products.filter(function(product){
 
 // Example: If type is veg, quant is greater than 0, 
 // price is less than 10
+
 products.filter(function(product){
   return product.type === 'vegetable' 
   && product.quantity > 0 
   && product.price > 4;
 });
+
+// Another Example
+
+var post = { id: 4, title: 'New Post' };
+var comments = [
+  { postId: 4, content: 'i love it!'},
+  { postId: 3, content: 'good stuff'},
+  { postId: 4, content: 'this is ok'},  
+];
+
+function commentsForPost(post, comments){
+  return comments.filter(function(comment){
+    return comment.postId === post.id;
+  });
+}
+
+commentsForPost(post, comments);
