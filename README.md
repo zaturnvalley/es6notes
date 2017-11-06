@@ -1,1 +1,1 @@
-# es6notes
+# Notes on ES6
