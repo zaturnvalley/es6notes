@@ -1,6 +1,6 @@
 // Notes on ES6
 
-// Array Helpers
+// forEach Helpers
 
 var colors = ["red", "green", "blue"];
 
@@ -12,7 +12,7 @@ for (var i = 0; i < colors.length; i++){
 //  ^^ we want to move away from this ES5 way of looping and instead use ES6 Helpers
 // For loops are prone to typos, more logic = more chances for errors
 
-// forEach 
+// Example
 colors.forEach(function(color){ //this is the iterator function passed into forEach
   console.log(color);
 });
@@ -31,14 +31,11 @@ numbers.forEach(adder);
 
 // print the sum variable
 sum;
-// map 
 
-// filter 
+// example
+var emails = ["Microsoft", "Cortana", "Welcome"];
 
-// find 
-
-// every 
-
-// some 
-
-// reduce
+function deleteEmail(email){
+  email.remove();
+}
+emails.forEach(deleteEmail);
