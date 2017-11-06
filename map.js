@@ -28,3 +28,10 @@ var prices = cars.map(function(car){
 });
 prices;
 
+// Example
+function pluck(array, property){
+  return array.map((obj) => {
+    return obj[property];
+  });
+}
+
