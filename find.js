@@ -51,3 +51,18 @@ function postForComment(posts, comment){
 }
 postForComment(posts, comment);
 }
+
+// sample data
+var ladders = [
+  {id: 1, height: '20 feet' },
+  {id: 2, height: '25 feet' }
+];
+
+// function that uses find blankly with criteria needed
+function findWhere(array, criteria){
+  return array.find(function(obj){
+    return obj[Object.keys(criteria)] === criteria[Object.keys(criteria)];
+  });
+}
+
+findWhere(ladders, { height: '20 feet' });
