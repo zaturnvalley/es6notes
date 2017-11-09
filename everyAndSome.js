@@ -7,6 +7,7 @@ var computers = [
 var allComputersCanRunProgram = true;
 var onlySomeComputersCanRunProgram = false;
 
+// old example with for loop
 for (var i = 0; i < computers.length; i++){
   var computer = computers[i];
 
@@ -19,3 +20,17 @@ for (var i = 0; i < computers.length; i++){
 
 allComputersCanRunProgram;
 onlySomeComputersCanRunProgram;
+
+// every example
+computers.every(function(computer){
+  return computer.ram > 16;
+});
+
+// every looks at all values and seeks && to return 
+// true if all are true, while some uses || to find 
+// if any return true
+
+// some example
+computers.some(function(computer){
+  return computer.ram > 16;
+});
