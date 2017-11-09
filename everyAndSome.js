@@ -34,3 +34,18 @@ computers.every(function(computer){
 computers.some(function(computer){
   return computer.ram > 16;
 });
+
+// array examples
+var names = [
+"Alex",
+"Matt",
+"Joe"
+];
+
+names.every(function(name){
+  return name.length > 4;
+});
+
+names.some(function(name){
+  return name.length > 4;
+});
