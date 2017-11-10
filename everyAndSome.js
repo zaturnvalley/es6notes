@@ -49,3 +49,31 @@ names.every(function(name){
 names.some(function(name){
   return name.length > 4;
 });
+
+// web dev example
+
+function Field(value){
+  this.value = value;
+}
+
+Field.prototype.validate = function(){
+  return this.value.length > 0;
+}
+
+var username = new Field("Awesome");
+var password = new Field("hello_you");
+var birthdate = new Field ("10/09/2017");
+
+var fields = [username, password, birthdate];
+
+var formIsValid = fields.every(function(field){
+  return field.validate();
+});
+
+if (formIsValid){
+  // Allow user to submit
+  console.log("Allowed");
+} else {
+  // Show an error message
+  console.log("Error");
+}
