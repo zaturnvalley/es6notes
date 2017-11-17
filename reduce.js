@@ -65,3 +65,42 @@ function makeAjaxRequestTwo(url, method = "GET"){
 
 makeAjaxRequestTwo('google.com', 'POST');
 makeAjaxRequestTwo('google.com', null);
+
+// without default arg example 
+function User(id){
+  this.id = id;
+}
+
+function generateId(){
+  return Math.random() * 99999;
+}
+
+function createAdminUser(user){
+  user.admin = true;
+
+  return user;
+}
+
+createAdminUser(new User(generateId()));
+
+// with default arg example 
+function createAdminUserTwo(user = new User(generateId())){
+  user.admin = true;
+  return user;
+}
+createAdminUserTwo();
+
+// much more flexible
+const user = new User(generateId());
+createAdminUser(user);
+
+// examples
+function sum(a = 0, b = 0) {
+  return a + b;
+}
+
+function addOffset(style = {}) {
+  style.offset = '10px';
+  
+  return style;
+}
