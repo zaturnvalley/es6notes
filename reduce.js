@@ -46,3 +46,22 @@ function unique(array) {
 }
 
 unique(numbers);
+
+function makeAjaxRequest(url, method){
+  if(!method){
+    method = "GET";
+  }
+
+  // logic to make the request
+  return method;
+}
+
+makeAjaxRequest('google.com')
+
+// Default func arg version:
+function makeAjaxRequestTwo(url, method = "GET"){
+  return method;
+}
+
+makeAjaxRequestTwo('google.com', 'POST');
+makeAjaxRequestTwo('google.com', null);
