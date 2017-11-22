@@ -73,3 +73,23 @@ const Google = {
 
 // using destructuring to get first elem
 const { locations: [ location ] } = Google;
+
+// use case
+
+function signup({ username, password, email, dateOfBirth, city }){
+  // create new user
+}
+
+// other code
+// other code
+
+const user = {
+  username: 'myname',
+  password: 'pass',
+  email: 'test@test.com',
+  dateOfBirth: '1/4/1970',
+  city: 'Portland'
+};
+signup('myname', 'pass', 'email@email.com','2/2/1980', 'Seattle');
+
+
