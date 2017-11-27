@@ -93,3 +93,22 @@ const user = {
 signup('myname', 'pass', 'email@email.com','2/2/1980', 'Seattle');
 
 
+// another example
+
+// x and y values fetched from API
+const points = [
+  [2,5],
+  [4,7],
+  [0,40]
+];
+
+// transform this data into:
+const pointsTwo: [
+  {x: 3, y: 6},
+  {x: 7, y: 2},
+  {x: 4, y: 3},
+];
+
+points.map(([x, y]) => {
+  return { x, y };
+});
