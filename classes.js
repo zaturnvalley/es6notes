@@ -60,3 +60,26 @@ dog.bark();
 
 const cockerspaniel = new CockerSpaniel({ color: 'black', name: 'Marley'});
 cockerspaniel.beg();
+
+// usecase with ReactJS
+
+// old way:
+React.createClass({
+  doSomething(){
+
+  },
+  doSomethingElse(){
+
+  }
+});
+
+// modern syntax example
+class MyComponent extends Component {
+  doSomething(){
+
+  }
+
+  doSomethingElse(){
+
+  }
+}
