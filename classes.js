@@ -32,3 +32,31 @@ toyota.drive();
 toyota.honk();
 
 // ES6 refactored version
+// Using classes
+
+class Dog {
+  constructor({ name }){
+    this.name = name;
+  }
+
+  bark(){
+    return 'ruff!';
+  }
+}
+ 
+// inherits from Dog
+class CockerSpaniel extends Dog{
+  constructor(options) {
+    super(options);     // calls Car.contructor
+    this.color = options.color;
+  }
+
+  beg(){
+    return 'woof!';
+  }
+}
+const dog = new Dog({ name: 'Buddy' });
+dog.bark();
+
+const cockerspaniel = new CockerSpaniel({ color: 'black', name: 'Marley'});
+cockerspaniel.beg();
