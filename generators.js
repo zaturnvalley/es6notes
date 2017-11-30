@@ -9,10 +9,13 @@ function* shopping() {
   // #5 go into store with cash
   const stuffFromStore = yield 'cash';
 
-  // #7 yield is entered again, but yield groceries
+  // #8 yield is entered again, but yield groceries
 
-  // #8 walking back home, final value is groceries
-  return stuffFromStore;
+  // walking into laundry place
+  const cleanClothes = yield 'laundry';
+
+  // #9 walking back home, final value is groceries
+  return [stuffFromStore, cleanClothes];
 }
 
 // #1, doesn't invoke
@@ -22,4 +25,28 @@ const gen = shopping();
 gen.next(); //returns {"done": false} , //leaving our house
 
 // #6 walk into store, purchase items
-gen.next('groceries'); //returns {"done": true} , // leaving the store with groceries
+gen.next('groceries'); 
+
+// #10 returns {"value":["groceries","clean clothes"],"done": true} , 
+
+// for of example of generator
+
+function* colors(){
+  yield 'red';
+  yield 'blue';
+  yield 'green';   
+}
+
+const gen = colors();
+gen.next(); //returns {"value":"red","done":false}
+gen.next(); //returns {"value":"blue","done":false}
+gen.next(); //returns {"value":"green","done":false}
+gen.next(); //returns {"done":true}
+
+// this does the same thing as above, but shorter
+// and pushing into array
+const myColors = [];
+for (let color of colors()) {
+  myColors.push(color);
+}
+
