@@ -50,3 +50,22 @@ for (let color of colors()) {
   myColors.push(color);
 }
 
+// another example
+const engineeringTeam = {
+  size: 3,
+  department: 'Engineering',
+  lead: 'Alex',
+  manager: 'Steve',
+  engineer: 'Dave'
+};
+
+function* TeamIterator(team) {
+  yield team.lead;
+  yield team.manager;
+  yield team.engineer;
+}
+
+const names = [];
+for (let name of TeamIterator(engineeringTeam)){
+  names.push(name);
+}
