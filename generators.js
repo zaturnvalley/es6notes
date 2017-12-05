@@ -51,9 +51,43 @@ for (let color of colors()) {
 }
 
 // another example
+
+// without symbol.generator
+// const testingTeam = {
+//   lead: 'Amanda',
+//   tester: 'Bill'
+// };
+
+// const engineeringTeam = {
+//   testingTeam,
+//   size: 3,
+//   department: 'Engineering',
+//   lead: 'Alex',
+//   manager: 'Steve',
+//   engineer: 'Dave'
+// };
+
+// function* TeamIterator(team) {
+//   yield team.lead;
+//   yield team.manager;
+//   yield team.engineer;
+//   const testingTeamGenerator = TestingTeamIterator(team.testingTeam);
+//   yield* testingTeamGenerator;
+// }
+
+// function* TestingTeamIterator(team){
+//   yield team.lead;
+//   yield team.tester;
+// }
+
+// with symbol.generator
 const testingTeam = {
   lead: 'Amanda',
-  tester: 'Bill'
+  tester: 'Bill',
+  [Symbol.iterator]: function* (){
+    yield this.lead;
+    yield this.tester;
+  }
 };
 
 const engineeringTeam = {
@@ -69,13 +103,7 @@ function* TeamIterator(team) {
   yield team.lead;
   yield team.manager;
   yield team.engineer;
-  const testingTeamGenerator = TestingTeamIterator(team.testingTeam);
-  yield* testingTeamGenerator;
-}
-
-function* TestingTeamIterator(team){
-  yield team.lead;
-  yield team.tester;
+  yield* team.testingTeam;
 }
 
 const names = [];
@@ -83,4 +111,5 @@ for (let name of TeamIterator(engineeringTeam)){
   names.push(name);
 }
 names;
+
 
